@@ -9,13 +9,5 @@
       "preLaunchTask": "npm: start",
       "url": "http://localhost:4200/"
     },
-
-    {
-      "name": "Angular Launch - Debugger (Mobile)",
-      "type": "pwa-chrome",
-      "request": "launch",
-      "preLaunchTask": "npm: start-mobile",
-      "url": "http://localhost:4200/"
-    },
   ]
 }

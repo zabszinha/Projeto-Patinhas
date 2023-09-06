@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "projetoPatinhas": {
+    "ProjetoPatinhas": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -20,6 +24,7 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -60,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "projetoPatinhas:build:production"
+              "browserTarget": "ProjetoPatinhas:build:production"
             },
             "development": {
-              "browserTarget": "projetoPatinhas:build:development"
+              "browserTarget": "ProjetoPatinhas:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "projetoPatinhas:build"
+            "browserTarget": "ProjetoPatinhas:build"
           }
         },
         "test": {
@@ -82,6 +87,7 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -96,6 +102,6 @@
     }
   },
   "cli": {
-    "analytics": "82b98963-4fe6-4c72-991b-2f4a7668732a"
+    "analytics": "42a5f50f-b4b9-4ce0-a0c0-005711ec8f7d"
   }
 }
