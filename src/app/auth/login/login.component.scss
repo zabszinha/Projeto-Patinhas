@@ -1,0 +1,31 @@
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    li {
+      input {
+        border-radius: 29px;
+        background: #fff;
+        padding-left: 46px;
+      }
+
+      button {
+        border-radius: 29px;
+        background: #24237b;
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+
+  small {
+    color: black;
+    font-size: 24px;
+  }
+}
