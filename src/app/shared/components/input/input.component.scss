@@ -1,6 +1,6 @@
 input {
   border-radius: 29px;
-  background: #A4D8EE;
+  background: #fff;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -10,11 +10,11 @@ input {
   font-family: Chicle;
   outline: none;
   transition: ease-out 0.3s;
-  border: 2px solid #A4D8EE;
+  border: 2px solid #fff;
   box-shadow: -1px 4px 29px 0px rgb(0 0 0 / 41%);
 
   &:focus,&:hover {
     transition: ease 0.3s;
-    border: 2px solid #5fb4d8;
+    border: 2px solid #24237b
   }
 }
