@@ -1,0 +1,31 @@
+
+<section class="form-container">
+  <strong> Cadastro </strong>
+
+  <ul>
+    <li>
+      <app-input type="text" placeholder="Nome Completo"></app-input>
+    </li>
+    <li>
+      <app-input type="text" placeholder="E-mail"></app-input>
+    </li>
+    <li>
+      <app-input [isPassword]="true" placeholder="Senha"></app-input>
+    </li>
+    <li style="padding-bottom: 36px;">
+      <app-input [isPassword]="true" placeholder="Repetir a senha"></app-input>
+    </li>
+    <li>
+      <div>
+        <app-button label="Cadastrar"></app-button>
+
+        <app-button label="Alterar cadastro"></app-button>
+      </div>
+    </li>
+  </ul>
+
+  <div>
+    <small>Já possui cadastro? <a>Logar</a></small>
+  </div>
+
+</section>

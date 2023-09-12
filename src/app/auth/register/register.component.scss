@@ -1,0 +1,19 @@
+section {
+  gap: 62px;
+
+
+  ul {
+    gap: 20px;
+
+    li {
+
+
+      & div {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,21 +1,24 @@
 
-<section>
-  <strong> {{ texto }} </strong>
-  <div>
-    <ul>
-      <li>
-        <input type="text" placeholder="E-mail">
-      </li>
-      <li>
-        <input type="text" placeholder="Senha">
-      </li>
-      <li>
-        <button>Acessar</button>
-      </li>
-    </ul>
+<section class="form-container">
+  <strong> Login </strong>
 
+  {{login}}
+  {{password}}
+  <ul>
+    <li>
+      <app-input type="text" placeholder="E-mail" (modelChangeEmitter)="login = $event"></app-input>
+    </li>
+    <li>
+      <app-input [isPassword]="true" placeholder="Senha" (modelChangeEmitter)="password = $event"></app-input>
+    </li>
+    <li>
+      <app-button label="Acessar"></app-button>
+    </li>
+  </ul>
+
+  <div>
     <small>Esqueci minha senha</small>
-    <small>Não possue cadastro? <a (click)="trocarNome()">Cadastrar</a></small>
+    <small>Não possue cadastro? <a>Cadastrar</a></small>
   </div>
 
 </section>

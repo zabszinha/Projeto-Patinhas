@@ -1,0 +1,6 @@
+<input
+  [type]="isPassword ? 'password' : type"
+  [placeholder]="placeholder"
+  [(ngModel)]="model"
+  (ngModelChange)="modelChange($event)"
+>
