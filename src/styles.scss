@@ -1,29 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Atma:wght@600&family=Chicle&family=Inter:wght@100;200;300;400;500;600;700&family=Roboto:wght@300&display=swap");
 
+@import "./assets/base/base.scss";
 @import "./assets/layout/form-container.scss";
-
-ul {
-  margin-block: 0;
-  margin-inline: 0;
-  padding-inline: 0;
-  list-style: none;
-}
-
-body {
-  margin: 0;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-app-button {
-  width: 100%;
-}
