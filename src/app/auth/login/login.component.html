@@ -10,7 +10,20 @@
       <app-input [isPassword]="true" placeholder="Senha" (modelChangeEmitter)="senha = $event"></app-input>
     </li>
     <li>
-      <app-button label="Acessar" (onClickChangeEmitter)="validatePassword(); sendLogin()"></app-button>
+      <ng-container *ngIf="_error; else notError">
+        <app-button label="Login/Senha Incorretos!" color="red"></app-button>
+      </ng-container>
+
+      <ng-template #notError>
+        <ng-container *ngIf="_confirming; else notConfirm">
+          <app-button label="Logado com Sucesso" color="green"></app-button>
+        </ng-container>
+
+        <ng-template #notConfirm>
+          <app-button label="Acessar" (onClickChangeEmitter)="validatePassword(); sendLogin()"></app-button>
+        </ng-template>
+      </ng-template>
+
 
       <div class=errors>
         <ng-container *ngIf="hasErrors">

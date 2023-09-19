@@ -12,6 +12,8 @@ export class LoginComponent {
   public senha: string = '';
 
   public _errors: string[] = [];
+  public _confirming: boolean = false;
+  public _error: boolean = false;
 
   get hasErrors(): boolean {
     return this._errors.length > 0;
@@ -21,8 +23,8 @@ export class LoginComponent {
   validatePassword() {
     this._errors = [];
 
-    if (!this.login) { this._errors.push('Campo Login deve ser preenchido!')}
-    if (!this.senha) { this._errors.push('Campo Senha deve ser preenchido!')}
+    if (!this.login) { this._errors.push('Campo Login deve ser preenchido!') }
+    if (!this.senha) { this._errors.push('Campo Senha deve ser preenchido!') }
   }
 
   sendLogin() {
@@ -34,7 +36,22 @@ export class LoginComponent {
     if (!this.hasErrors) {
       this.request.login(obj)
         .subscribe(x => {
-          this.goToHome();
+          if (x == "Email e/ou senha incorretos.") {
+            this._confirming = false;
+            this._error = true
+            setTimeout(() => {
+              this._error = false
+            }, 2000);
+          } else {
+            this._error = false
+            this._confirming = true;
+            localStorage.setItem('FKToke', 'true');
+
+
+            setTimeout(() => {
+              this.goToHome();
+            }, 2000);
+          }
         })
     }
   }
@@ -45,6 +62,6 @@ export class LoginComponent {
   }
 
   goToHome() {
-    this.route.navigate(['/']);
+    this.route.navigate(['']);
   }
 }

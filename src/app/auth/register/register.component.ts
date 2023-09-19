@@ -55,8 +55,6 @@ export class RegisterComponent {
           setTimeout(() => {
             this.goToLogin();
           }, 2000);
-
-          // this._confirming = false;
         })
     }
   }
