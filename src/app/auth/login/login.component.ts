@@ -8,7 +8,7 @@ import { RequestService } from 'src/app/shared/services/request.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  public login: string = '';
+  public email: string = '';
   public senha: string = '';
 
   public _errors: string[] = [];
@@ -23,13 +23,13 @@ export class LoginComponent {
   validatePassword() {
     this._errors = [];
 
-    if (!this.login) { this._errors.push('Campo Login deve ser preenchido!') }
+    if (!this.email) { this._errors.push('Campo Login deve ser preenchido!') }
     if (!this.senha) { this._errors.push('Campo Senha deve ser preenchido!') }
   }
 
   sendLogin() {
     const obj = {
-      login: this.login,
+      email: this.email,
       senha: this.senha
     }
 

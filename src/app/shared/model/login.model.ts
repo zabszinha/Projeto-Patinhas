@@ -1,4 +1,4 @@
 export interface Login {
-  login: string | undefined;
+  email: string | undefined;
   senha: string | undefined;
 }
