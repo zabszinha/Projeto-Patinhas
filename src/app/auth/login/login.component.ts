@@ -25,7 +25,7 @@ export class LoginComponent {
     if (!this.senha) { this._errors.push('Campo Senha deve ser preenchido!')}
   }
 
-  sendRegister() {
+  sendLogin() {
     const obj = {
       login: this.login,
       senha: this.senha

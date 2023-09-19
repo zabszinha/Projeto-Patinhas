@@ -10,7 +10,7 @@
       <app-input [isPassword]="true" placeholder="Senha" (modelChangeEmitter)="senha = $event"></app-input>
     </li>
     <li>
-      <!-- <app-button label="Acessar" (onClickChangeEmitter)="validateLogin(); sendLogin()"></app-button> -->
+      <app-button label="Acessar" (onClickChangeEmitter)="validatePassword(); sendLogin()"></app-button>
 
       <div class=errors>
         <ng-container *ngIf="hasErrors">
