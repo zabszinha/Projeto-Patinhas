@@ -47,9 +47,13 @@ export class RegisterComponent {
 
     if (!this.hasErrors) {
       this.request.register(obj)
-        .subscribe(x =>{
-          this.route.navigate(['/login']);
+        .subscribe(x => {
+          this.goToLogin();
         })
+      }
     }
+
+    goToLogin() {
+    this.route.navigate(['auth/login']);
   }
 }
