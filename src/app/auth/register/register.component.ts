@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Register } from 'src/app/shared/model/register.model';
 import { RequestService } from 'src/app/shared/services/request.service';
 
@@ -19,7 +20,7 @@ export class RegisterComponent {
   get hasErrors(): boolean {
     return this._errors.length > 0;
   }
-  constructor(private request: RequestService) { this._errors = [] }
+  constructor(private request: RequestService, private route: Router) { this._errors = [] }
 
   validatePassword() {
     this._errors = [];
@@ -38,7 +39,6 @@ export class RegisterComponent {
   }
 
   sendRegister() {
-
     const obj = {
       nome: this.name,
       email: this.email,
@@ -47,7 +47,9 @@ export class RegisterComponent {
 
     if (!this.hasErrors) {
       this.request.register(obj)
-        .subscribe(x => console.log(x))
+        .subscribe(x =>{
+          this.route.navigate(['/login']);
+        })
     }
   }
 }

@@ -11,6 +11,6 @@ export class RequestService {
   constructor(private http: HttpClient) { }
 
   register(reg: Register): Observable<string> {
-    return this.http.post<string>('localhost:3000/AddUser', reg);
+    return this.http.post<string>('http://localhost:3000/AddUser', reg);
   }
 }
