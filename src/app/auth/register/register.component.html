@@ -3,13 +3,13 @@
 
   <ul>
     <li>
-      <app-input type="text" placeholder="Nome Completo" (modelChangeEmitter)="register.nome = $event"></app-input>
+      <app-input type="text" placeholder="Nome Completo" (modelChangeEmitter)="name = $event"></app-input>
     </li>
     <li>
-      <app-input type="text" placeholder="E-mail" (modelChangeEmitter)="register.email = $event"></app-input>
+      <app-input type="text" placeholder="E-mail" (modelChangeEmitter)="email = $event"></app-input>
     </li>
     <li>
-      <app-input [error]="hasErrors" [isPassword]="true" placeholder="Senha" (modelChangeEmitter)="register.senha = $event"></app-input>
+      <app-input [error]="hasErrors" [isPassword]="true" placeholder="Senha" (modelChangeEmitter)="senha = $event"></app-input>
     </li>
     <li style="padding-bottom: 36px;">
       <app-input [error]="hasErrors" [isPassword]="true" placeholder="Repetir a senha"(modelChangeEmitter)="rSenha = $event"></app-input>

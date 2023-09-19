@@ -9,7 +9,9 @@ import { RequestService } from 'src/app/shared/services/request.service';
 })
 export class RegisterComponent {
 
-  public register!: Register;
+  public name: string = '';
+  public email: string = '';
+  public senha: string = '';
   public rSenha: string = '';
 
   public _errors: string[] = [];
@@ -22,23 +24,30 @@ export class RegisterComponent {
   validatePassword() {
     this._errors = [];
 
-    if (this.register.senha) {
+    if (this.senha) {
       if (this.rSenha.length > 0) {
-        if (this.register.senha !== this.rSenha) {
+        if (this.senha !== this.rSenha) {
           this._errors.push('As senhas devem ser iguais.')
         }
       }
 
-      if (this.register.senha.length < 6) {
+      if (this.senha.length < 6) {
         this._errors.push('Senha deve ter mais que 6 caracteres!')
       }
     }
   }
 
   sendRegister() {
+
+    const obj = {
+      nome: this.name,
+      email: this.email,
+      senha: this.senha
+    }
+
     if (!this.hasErrors) {
-      this.request.register(this.register)
-      .subscribe(x => console.log(x))
+      this.request.register(obj)
+        .subscribe(x => console.log(x))
     }
   }
 }
