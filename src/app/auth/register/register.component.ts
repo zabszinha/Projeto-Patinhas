@@ -49,13 +49,14 @@ export class RegisterComponent {
     if (!this.hasErrors) {
 
       this.request.register(obj)
-      .subscribe(x => {
-        setTimeout(() => {
-            this._confirming = true;
-          }, 2000);
-          this.goToLogin();
+        .subscribe(x => {
+          this._confirming = true;
 
-          this._confirming = false;
+          setTimeout(() => {
+            this.goToLogin();
+          }, 2000);
+
+          // this._confirming = false;
         })
     }
   }
