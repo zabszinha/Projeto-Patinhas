@@ -1,23 +1,32 @@
-
 <section class="form-container">
   <strong> Cadastro </strong>
 
   <ul>
     <li>
-      <app-input type="text" placeholder="Nome Completo"></app-input>
+      <app-input type="text" placeholder="Nome Completo" (modelChangeEmitter)="register.nome = $event"></app-input>
     </li>
     <li>
-      <app-input type="text" placeholder="E-mail"></app-input>
+      <app-input type="text" placeholder="E-mail" (modelChangeEmitter)="register.email = $event"></app-input>
     </li>
     <li>
-      <app-input [isPassword]="true" placeholder="Senha"></app-input>
+      <app-input [error]="hasErrors" [isPassword]="true" placeholder="Senha" (modelChangeEmitter)="register.senha = $event"></app-input>
     </li>
     <li style="padding-bottom: 36px;">
-      <app-input [isPassword]="true" placeholder="Repetir a senha"></app-input>
+      <app-input [error]="hasErrors" [isPassword]="true" placeholder="Repetir a senha"(modelChangeEmitter)="rSenha = $event"></app-input>
+
+      <div class=errors>
+        <ng-container *ngIf="hasErrors">
+          <ng-container *ngFor="let erro of _errors">
+            <small>
+              {{erro}}
+            </small>
+          </ng-container>
+        </ng-container>
+      </div>
     </li>
     <li>
       <div>
-        <app-button label="Cadastrar"></app-button>
+        <app-button label="Cadastrar" (onClickChangeEmitter)="validatePassword(); sendRegister()"></app-button>
 
         <app-button label="Alterar cadastro"></app-button>
       </div>

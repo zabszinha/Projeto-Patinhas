@@ -11,6 +11,7 @@ export class InputTextComponent {
   @Input() type: string = 'text';
   @Input() placeholder: string = '';
   @Input() isPassword: boolean = false;
+  @Input() error: boolean = false;
 
   @Output() modelChangeEmitter: EventEmitter<string> = new EventEmitter();
 

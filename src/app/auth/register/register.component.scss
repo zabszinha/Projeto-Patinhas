@@ -6,13 +6,26 @@ section {
     gap: 20px;
 
     li {
-
-
       & div {
         display: flex;
         flex-direction: column;
         gap: 12px;
         width: 100%;
+      }
+
+      div.errors {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+        align-items: center;
+        padding-top: 6px;
+
+        small {
+          font-size: 14px;
+          color: red;
+          font-size: 16px;
+        }
       }
     }
   }
