@@ -26,11 +26,11 @@
     </li>
     <li>
       <div>
-        <ng-container *ngIf="_confirming">
+        <ng-container *ngIf="_confirming; else notConfirm">
           <app-button label="Logado com Sucesso" color="green"></app-button>
         </ng-container>
 
-        <ng-template>
+        <ng-template #notConfirm>
           <app-button label="Cadastrar" (onClickChangeEmitter)="validatePassword(); sendRegister()"></app-button>
         </ng-template>
 
