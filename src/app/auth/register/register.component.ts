@@ -16,6 +16,7 @@ export class RegisterComponent {
   public rSenha: string = '';
 
   public _errors: string[] = [];
+  public _confirming: boolean = false;
 
   get hasErrors(): boolean {
     return this._errors.length > 0;
@@ -48,12 +49,17 @@ export class RegisterComponent {
     if (!this.hasErrors) {
       this.request.register(obj)
         .subscribe(x => {
-          this.goToLogin();
-        })
-      }
-    }
+          this._confirming = true;
+          setTimeout(() => {
+            this.goToLogin();
+          }, 3000);
 
-    goToLogin() {
+          this._confirming = false;
+        })
+    }
+  }
+
+  goToLogin() {
     this.route.navigate(['auth/login']);
   }
 }

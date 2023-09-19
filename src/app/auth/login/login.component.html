@@ -2,23 +2,31 @@
 <section class="form-container">
   <strong> Login </strong>
 
-  {{login}}
-  {{password}}
   <ul>
     <li>
       <app-input type="text" placeholder="E-mail" (modelChangeEmitter)="login = $event"></app-input>
     </li>
     <li>
-      <app-input [isPassword]="true" placeholder="Senha" (modelChangeEmitter)="password = $event"></app-input>
+      <app-input [isPassword]="true" placeholder="Senha" (modelChangeEmitter)="senha = $event"></app-input>
     </li>
     <li>
-      <app-button label="Acessar"></app-button>
+      <!-- <app-button label="Acessar" (onClickChangeEmitter)="validateLogin(); sendLogin()"></app-button> -->
+
+      <div class=errors>
+        <ng-container *ngIf="hasErrors">
+          <ng-container *ngFor="let erro of _errors">
+            <small>
+              {{erro}}
+            </small>
+          </ng-container>
+        </ng-container>
+      </div>
     </li>
   </ul>
 
   <div>
     <small>Esqueci minha senha</small>
-    <small>Não possue cadastro? <a>Cadastrar</a></small>
+    <small>Não possue cadastro? <a (click)="goToRegister()">Cadastrar</a></small>
   </div>
 
 </section>

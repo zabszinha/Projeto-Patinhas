@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class SimpleButtonComponent {
   @Input() label: string = '';
   @Input() width: string = '80%';
+  @Input() color: string = '#24237b';
 
   @Output() public onClickChangeEmitter: EventEmitter<any> = new EventEmitter<any>();
 

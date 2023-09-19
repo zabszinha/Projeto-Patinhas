@@ -26,7 +26,13 @@
     </li>
     <li>
       <div>
-        <app-button label="Cadastrar" (onClickChangeEmitter)="validatePassword(); sendRegister()"></app-button>
+        <ng-container *ngIf="_confirming">
+          <app-button label="Logado com Sucesso" color="green"></app-button>
+        </ng-container>
+
+        <ng-template>
+          <app-button label="Cadastrar" (onClickChangeEmitter)="validatePassword(); sendRegister()"></app-button>
+        </ng-template>
 
         <app-button label="Alterar cadastro"></app-button>
       </div>
