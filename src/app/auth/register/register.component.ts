@@ -10,6 +10,8 @@ import { RequestService } from 'src/app/shared/services/request.service';
 })
 export class RegisterComponent {
 
+  public typeUser: any;
+
   public name: string = '';
   public email: string = '';
   public senha: string = '';

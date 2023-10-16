@@ -7,6 +7,8 @@ import { InputModule } from '../shared/components/input/input.module';
 import { ButtonModule } from '../shared/components/button/button.module';
 import { RegisterComponent } from './register/register.component';
 import { RecoverAccessComponent } from './recover-access/recover-access.component';
+import { FormsModule } from '@angular/forms';
+import { ToolTipDirective } from '../shared/directives/tooltip.directive';
 
 
 
@@ -14,13 +16,15 @@ import { RecoverAccessComponent } from './recover-access/recover-access.componen
   declarations: [
     LoginComponent,
     RegisterComponent,
-    RecoverAccessComponent
+    RecoverAccessComponent,
+    ToolTipDirective
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     InputModule,
-    ButtonModule
+    ButtonModule,
+    FormsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

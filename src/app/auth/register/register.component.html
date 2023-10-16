@@ -2,6 +2,32 @@
   <strong> Cadastro </strong>
 
   <ul>
+    <div class="switch-container">
+      <svg
+        width="40"
+        height="40"
+        [ngClass]="{'checked': !typeUser}"
+        appToolTip tooltip="Quero adotar!" theme="white" position="bottom"
+      >
+        <use xlink:href="../../../assets/svg/default.svg#default" />
+      </svg>
+
+      <label class="switch">
+        <input type="checkbox" [(ngModel)]="typeUser">
+        <span class="slider round"></span>
+      </label>
+
+      <svg
+        width="40"
+        height="40"
+        style="padding-left: 8px;padding-top: 2px;"
+        [ngClass]="{'checked': typeUser}"
+        appToolTip tooltip="Sou ONG" theme="white" position="bottom"
+      >
+        <use xlink:href="../../../assets/svg/ong.svg#ong" />
+      </svg>
+    </div>
+
     <li>
       <app-input type="text" placeholder="Nome Completo" (modelChangeEmitter)="name = $event"></app-input>
     </li>

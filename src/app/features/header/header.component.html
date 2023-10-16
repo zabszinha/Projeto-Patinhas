@@ -1,20 +1,33 @@
-<section>
+<section [ngClass]="{'auth': isAuthRoute}">
   <div>
     <img src="../../../assets/img/logo.png">
     <p>Patinhas</p>
   </div>
 
-  <ul>
-    <li>
-      <p>Ínicio</p>
-    </li>
-    <li>
-      <p>Sobre nós</p>
-    </li>
-    <li>
-      <p>Blog</p>
-    </li>
-  </ul>
+  <ng-container *ngIf="!isAuthRoute">
+    <ul>
+      <li>
+        <p>Inicio</p>
+      </li>
+      <li>
+        <p>Quem Somos</p>
+      </li>
+      <li>
+        <p>ONG's</p>
+      </li>
+      <li>
+        <p>Blog</p>
+      </li>
+    </ul>
 
-  <!-- <div class="blank"></div> -->
+    <div class="center">
+      <app-button label="Quero AUdotar!" color="#24237B" width="70%"></app-button>
+    </div>
+
+    <div class="user-action">
+      <div class="img">
+        <i class="pi pi-user"></i>
+      </div>
+    </div>
+  </ng-container>
 </section>

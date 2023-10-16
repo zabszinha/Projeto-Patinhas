@@ -2,10 +2,15 @@ section {
   display: grid;
   grid-auto-flow: row dense;
   grid-auto-columns: 1fr;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-template-areas: ". . .";
+  background: #eaf9ff;
+
+  &.auth {
+    background: white !important;
+  }
 
   > div {
     display: flex;
@@ -19,8 +24,8 @@ section {
     }
 
     p {
-      color: #F55C5D;
-      font-family: Chicle;
+      color: #f55c5d;
+      font-family: Roboto;
       margin: 0;
       margin-block: 0;
       margin-inline: 0;
@@ -36,16 +41,48 @@ section {
 
     li {
       p {
-        font-size: 32px;
-        font-family: Chicle;
-        font-weight: 600;
+        font-size: 24px;
+        font-family: Roboto;
+        font-weight: 500;
+        transition: ease-out 0.2s;
+        color: black;
 
-        &:hover{
-          transition: ease 0.3s;
-          opacity: 0.6;
+        &:hover {
+          transition: ease 0.2s;
+          color: #f55c5d;
+          // opacity: 0.6;
           cursor: pointer;
         }
       }
+    }
+  }
+
+  div.user-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div.img {
+      width: 60px;
+      height: 60px;
+      background-color: rgb(197, 197, 197);
+      border-radius: 80px;
+      box-shadow: -1px 4px 10px 0px rgba(0, 0, 0, 0.41);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        font-size: 40px;
+        color: white;
+      }
+    }
+  }
+}
+::ng-deep app-button {
+  section {
+    button {
+      box-shadow: none !important;
     }
   }
 }
