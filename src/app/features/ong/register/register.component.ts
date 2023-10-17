@@ -49,28 +49,31 @@ export class RegisterONGComponent {
   }
 
   sendRegister() {
-    if (!this.hasErrors) {
-      const user = JSON.parse(localStorage.getItem('FKToken') as string);
+    // if (!this.hasErrors) {
+    //   const user = JSON.parse(localStorage.getItem('FKToken') as string);
 
-      const obj = {
-        nome: this.nomePet,
-        idade: this.idade,
-        raca: this.raca,
-        porte: this.porte,
-        foto: 'cachorro03',
-        descricao: '',
-        id_usu: user.id,
-        especie: ''
-      }
+    //   const obj = {
+    //     nome: this.nomePet,
+    //     idade: this.idade,
+    //     raca: this.raca,
+    //     porte: this.porte,
+    //     foto: 'cachorro03',
+    //     descricao: '',
+    //     id_usu: user.id,
+    //     especie: ''
+    //   }
 
-      this.request.registerAnimal(obj)
-        .subscribe(x => {
-          this._confirming = true;
+    //   this.request.registerAnimal(obj)
+    //     .subscribe(x => {
+    //       this._confirming = true;
 
           setTimeout(() => {
-
+            this.nomePet = '';
+            this.idade = 1;
+            this.raca = '';
+            this.porte = '';
           }, 2000);
-        })
-    }
+        // })
+    // }
   }
 }
