@@ -10,7 +10,7 @@
         <p [routerLink]="['/home']" >Home</p>
       </li>
       <li>
-        <p [routerLink]="['/ong/register']">Adotar Pet</p>
+        <p [routerLink]="['/user']">Adotar Pet</p>
       </li>
     </ul>
   </ng-container>
@@ -42,11 +42,13 @@
     <div class="center">
       <app-button label="Quero AUdotar!" color="#24237B" width="70%" (onClickChangeEmitter)="queroAUdotar()"></app-button>
     </div>
+  </ng-container>
 
-    <!-- <div class="user-action">
+  <ng-container *ngIf="isOngRoute || isDefault">
+    <div class="user-action">
       <div class="img">
         <i class="pi pi-user"></i>
       </div>
-    </div> -->
+    </div>
   </ng-container>
 </section>

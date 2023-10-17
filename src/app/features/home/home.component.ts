@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
     const FKToken = {
       id: 1,
-      typeUser: true
+      typeUser: false
     };
 
     localStorage.setItem('FKToken', JSON.stringify(FKToken));
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
 
   cadastrarAnimal() {
     if (!this.validateService.validate()) {
-      this.router.navigate(['auth/login']);
+      this.router.navigate(['auth/register']);
     } else {
       const token = JSON.parse(localStorage.getItem('FKToken') as string);
 
