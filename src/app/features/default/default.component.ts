@@ -16,7 +16,7 @@ export class DefaultComponent implements OnInit {
   ngOnInit(): void {
     this.listaAnimais = [];
     this.requestService.listAll().subscribe(x => {
-      this.listaAnimais.push(x);
+      x.forEach(y => this.listaAnimais.push(x))
     })
   }
 }
