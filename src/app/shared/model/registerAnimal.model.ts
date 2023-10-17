@@ -5,6 +5,6 @@ export interface RegisterAnimal {
   porte: string | undefined;
   foto: string | undefined;
   descricao: string | undefined;
-  id_use: number | undefined;
+  id_usu: number | undefined;
 
 }
