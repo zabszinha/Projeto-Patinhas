@@ -40,9 +40,10 @@ export class RegisterONGComponent {
       this._errors.push('Raça do Pet Inválido');
     }
 
-    if (this.porte.toLowerCase() != 'pequeno'
-      || this.porte.toLowerCase() != 'medio'
-      || this.porte.toLowerCase() != 'grande') {
+    const formatedPorte = this.porte.toLowerCase();
+    if (formatedPorte === 'pequeno' || formatedPorte === 'medio' || formatedPorte === 'grande') {
+      return
+    } else {
       this._errors.push('Porte Inválido, tente "Pequeno, Médio ou Grande"');
     }
   }
