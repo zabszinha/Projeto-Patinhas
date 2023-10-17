@@ -5,7 +5,7 @@
     <div class="upload-file">
       <div class="image">
         <ng-container *ngIf="image; else blank">
-          <img src="../../../../assets/img/cachorro.jpg">
+          <img src="../../../../assets/img/cachorro03.png" style="border-radius: 24px;">
         </ng-container>
 
         <ng-template #blank>
@@ -24,13 +24,18 @@
         <app-input type="text" placeholder="Nome do Pet" (modelChangeEmitter)="nomePet = $event"></app-input>
       </li>
       <li>
-        <app-input type="text" placeholder="Idade" (modelChangeEmitter)="idade = $event"></app-input>
+        <app-input [type]="'number'" placeholder="Idade" (modelChangeEmitter)="idade = $event"></app-input>
       </li>
       <li>
         <app-input type="text" placeholder="Raça" (modelChangeEmitter)="raca = $event"></app-input>
       </li>
       <li style="padding-bottom: 36px;">
-        <app-input type="text" placeholder="Porte" (modelChangeEmitter)="porte = $event"></app-input>
+        <app-input
+        type="text"
+        placeholder="Porte"
+        (modelChangeEmitter)="porte = $event"
+        appToolTip tooltip="Pequeno, Médio ou Grande" theme="white" position="right"
+        ></app-input>
 
         <div class=errors>
           <ng-container *ngIf="hasErrors">
@@ -49,7 +54,7 @@
           </ng-container>
 
           <ng-template #notConfirm>
-            <app-button label="Cadastrar" (onClickChangeEmitter)="sendRegister()"></app-button>
+            <app-button label="Cadastrar" (onClickChangeEmitter)="validateRegister();sendRegister()"></app-button>
           </ng-template>
         </div>
       </li>

@@ -12,7 +12,7 @@ export class RegisterONGComponent {
   public image: any
 
   public nomePet: string = '';
-  public idade: string = '';
+  public idade: number = 1;
   public raca: string = '';
   public porte: string = '';
 
@@ -22,29 +22,53 @@ export class RegisterONGComponent {
   get hasErrors(): boolean {
     return this._errors.length > 0;
   }
-  constructor(private request: RequestService, private route: Router) { this._errors = [] }
+  constructor(
+    private request: RequestService,
+    private route: Router) { this._errors = [] }
 
-  sendRegister() {
-    const obj = {
-      nome: this.nomePet,
-      idade: this.idade,
-      raca: this.raca,
-      porte: this.porte,
-      foto: '',
-      descricao: '',
-      id_use: 1
+  validateRegister() {
+    this._errors = [];
+
+    if (this.nomePet == '' || this.nomePet.length < 3) {
+      this._errors.push('Nome do Pet Inválido');
+    }
+    if (this.idade < 0) {
+      this._errors.push('Idade do Pet Inválida');
     }
 
+    if (this.raca == '') {
+      this._errors.push('Raça do Pet Inválido');
+    }
+
+    if (this.porte.toLowerCase() != 'pequeno'
+      || this.porte.toLowerCase() != 'medio'
+      || this.porte.toLowerCase() != 'grande') {
+      this._errors.push('Porte Inválido, tente "Pequeno, Médio ou Grande"');
+    }
+  }
+
+  sendRegister() {
     if (!this.hasErrors) {
+      const user = JSON.parse(localStorage.getItem('FKToken') as string);
 
-      // this.request.register(obj)
-      //   .subscribe(x => {
-      //     this._confirming = true;
+      const obj = {
+        nome: this.nomePet,
+        idade: this.idade,
+        raca: this.raca,
+        porte: this.porte,
+        foto: 'cachorro03',
+        descricao: '',
+        id_use: user.id
+      }
 
-      //     setTimeout(() => {
+      this.request.registerAnimal(obj)
+        .subscribe(x => {
+          this._confirming = true;
 
-      //     }, 2000);
-      //   })
+          setTimeout(() => {
+
+          }, 2000);
+        })
     }
   }
 }

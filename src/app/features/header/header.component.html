@@ -1,13 +1,13 @@
 <section [ngClass]="{'auth': isAuthRoute, 'ong': isOngRoute}">
   <div>
-    <img src="../../../assets/img/logo.png">
+    <img src="../../../assets/img/logo.png" [routerLink]="['/home']">
     <p>Patinhas</p>
   </div>
 
   <ng-container *ngIf="isDefault">
     <ul>
       <li>
-        <p [routerLink]="['/home']" [queryParams]="{debug: true}">Home</p>
+        <p [routerLink]="['/home']" >Home</p>
       </li>
       <li>
         <p [routerLink]="['/ong/register']">Adotar Pet</p>
@@ -18,7 +18,7 @@
   <ng-container *ngIf="isOngRoute">
     <ul>
       <li>
-        <p>Home</p>
+        <p [routerLink]="['/ong/home']">Home</p>
       </li>
       <li>
         <p [routerLink]="['/ong/register']">Adicional Animal para adoção</p>
@@ -26,19 +26,16 @@
     </ul>
   </ng-container>
 
-  <ng-container *ngIf="!isAuthRoute">
+  <ng-container *ngIf="!isAuthRoute && !isOngRoute && !isDefault">
     <ul>
-      <li>
+      <li [routerLink]="['/home']">
         <p>Inicio</p>
       </li>
       <li>
-        <p>Quem Somos</p>
+        <p>Nossos Serviços</p>
       </li>
       <li>
         <p>ONG's</p>
-      </li>
-      <li>
-        <p>Blog</p>
       </li>
     </ul>
 

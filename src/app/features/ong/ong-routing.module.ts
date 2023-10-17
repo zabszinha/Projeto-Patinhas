@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterONGComponent } from './register/register.component';
+import { HomeONGComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -8,10 +9,10 @@ const routes: Routes = [
     redirectTo: "/register",
     pathMatch: "full"
   },
-  // {
-  //   path: "list",
-  //   component: ,
-  // },
+  {
+    path: "home",
+    component: HomeONGComponent,
+  },
   {
     path: "register",
     component: RegisterONGComponent

@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
     const FKToken = {
       id: 1,
-      typeUser: false
+      typeUser: true
     };
 
     localStorage.setItem('FKToken', JSON.stringify(FKToken));

@@ -22,9 +22,13 @@ section {
     align-items: center;
     justify-content: center;
 
+    cursor: pointer;
+
     img {
       width: 60px;
       height: 60px;
+      transition: ease-out 1s;
+      transform: rotate(0deg);
     }
 
     p {
@@ -34,6 +38,20 @@ section {
       margin-block: 0;
       margin-inline: 0;
       font-size: 26px;
+
+      transition: ease 1s;
+      font-weight: 500;
+    }
+
+    &:hover {
+      p {
+        transition: ease 1s;
+        font-weight: 600;
+      }
+      img {
+        transition: ease 1s;
+        transform: rotate(360deg);
+      }
     }
   }
 

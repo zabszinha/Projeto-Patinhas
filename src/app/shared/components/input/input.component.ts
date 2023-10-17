@@ -13,9 +13,9 @@ export class InputTextComponent {
   @Input() isPassword: boolean = false;
   @Input() error: boolean = false;
 
-  @Output() modelChangeEmitter: EventEmitter<string> = new EventEmitter();
+  @Output() modelChangeEmitter: EventEmitter<any> = new EventEmitter();
 
-  public modelChange(e: string): void {
+  public modelChange(e: any): void {
     this.model = e;
     this.modelChangeEmitter.emit(this.model);
   }

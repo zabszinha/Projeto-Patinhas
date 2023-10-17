@@ -1,11 +1,14 @@
 <div class="overflow">
   <ng-container *ngFor="let animal of listaAnimais">
     <main>
-      <img src="../../../assets/img/cachorro.jpg" width="500">
+      <img src="../../../assets/img/{{animal.foto}}.png" width="600" height="300">
 
       <section>
         <label>
-          <h2> {{animal.nome}}, {{animal.raca}} </h2>
+          <h2>
+            {{animal.nome}}, {{animal.raca}}
+            <small> Guarulhos, SP</small>
+          </h2>
 
           <div class="cards">
             <strong>Idade</strong>
@@ -21,8 +24,14 @@
 
           <app-button label="Saiba mais" color="#24237B" width="100%"></app-button>
 
-          <app-button label="Audotar" color="#24237B" width="100%"></app-button>
+          <app-button label="AUdotar" color="#24237B" width="100%"></app-button>
 
+          <ng-container *ngIf="!favoriteAnimal; else favorited">
+            <i class="pi pi-heart" (click)="favoriteAnimal = true"></i>
+          </ng-container>
+          <ng-template #favorited>
+            <i class="pi pi-heart-fill" style="color: #f55c5d;" (click)="favoriteAnimal = false"></i>
+          </ng-template>
         </div>
       </section>
     </main>
