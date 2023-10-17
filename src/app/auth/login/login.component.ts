@@ -43,10 +43,11 @@ export class LoginComponent {
               this._error = false
             }, 2000);
           } else {
+            const FKToken = x;
+
             this._error = false
             this._confirming = true;
-            localStorage.setItem('FKToke', 'true');
-
+            localStorage.setItem('FKToken', JSON.stringify(FKToken));
 
             setTimeout(() => {
               this.goToHome();

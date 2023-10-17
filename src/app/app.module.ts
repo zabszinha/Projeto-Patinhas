@@ -8,12 +8,14 @@ import { HeaderComponent } from './features/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './features/home/home.component';
 import { ButtonModule } from './shared/components/button/button.module';
+import { DefaultComponent } from './features/default/default.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
+    DefaultComponent,
   ],
   imports: [
     BrowserModule,

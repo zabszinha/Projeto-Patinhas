@@ -1,0 +1,54 @@
+section {
+  gap: 62px;
+
+  main {
+    display: flex;
+    gap: 32px;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+
+    div.upload-file {
+      img {
+        height: 360px;
+        filter: drop-shadow(2px 4px 6px black);
+      }
+
+      label {
+        display: flex;
+        gap: 12px;
+        padding-top: 16px;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    ul {
+      gap: 0px;
+
+      li {
+        & div {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          width: 100%;
+        }
+
+        div.errors {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          text-align: center;
+          align-items: center;
+          padding-top: 6px;
+
+          small {
+            font-size: 14px;
+            color: red;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
+import { DefaultComponent } from './features/default/default.component';
 
 const routes: Routes = [
   {
@@ -13,8 +14,16 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: "user",
+    component: DefaultComponent
+  },
+  {
     path: "auth",
     loadChildren: () => import("./auth/auth.module").then(m => m.AuthModule)
+  },
+  {
+    path: "ong",
+    loadChildren: () => import("./features/ong/ong.module").then(m => m.OngModule)
   },
 ];
 

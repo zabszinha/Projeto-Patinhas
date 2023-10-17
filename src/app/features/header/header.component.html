@@ -1,8 +1,30 @@
-<section [ngClass]="{'auth': isAuthRoute}">
+<section [ngClass]="{'auth': isAuthRoute, 'ong': isOngRoute}">
   <div>
     <img src="../../../assets/img/logo.png">
     <p>Patinhas</p>
   </div>
+
+  <ng-container *ngIf="isDefault">
+    <ul>
+      <li>
+        <p [routerLink]="['/home']" [queryParams]="{debug: true}">Home</p>
+      </li>
+      <li>
+        <p [routerLink]="['/ong/register']">Adotar Pet</p>
+      </li>
+    </ul>
+  </ng-container>
+
+  <ng-container *ngIf="isOngRoute">
+    <ul>
+      <li>
+        <p>Home</p>
+      </li>
+      <li>
+        <p [routerLink]="['/ong/register']">Adicional Animal para adoção</p>
+      </li>
+    </ul>
+  </ng-container>
 
   <ng-container *ngIf="!isAuthRoute">
     <ul>
@@ -21,13 +43,13 @@
     </ul>
 
     <div class="center">
-      <app-button label="Quero AUdotar!" color="#24237B" width="70%"></app-button>
+      <app-button label="Quero AUdotar!" color="#24237B" width="70%" (onClickChangeEmitter)="queroAUdotar()"></app-button>
     </div>
 
-    <div class="user-action">
+    <!-- <div class="user-action">
       <div class="img">
         <i class="pi pi-user"></i>
       </div>
-    </div>
+    </div> -->
   </ng-container>
 </section>

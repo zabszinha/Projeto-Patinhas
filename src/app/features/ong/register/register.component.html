@@ -1,0 +1,58 @@
+<section class="form-container">
+  <strong> Cadastro de Animais </strong>
+
+  <main>
+    <div class="upload-file">
+      <div class="image">
+        <ng-container *ngIf="image; else blank">
+          <img src="../../../../assets/img/cachorro.jpg">
+        </ng-container>
+
+        <ng-template #blank>
+          <img src="../../../../assets/img/blank.png" width="494" height="360" style="border-radius: 24px;">
+        </ng-template>
+      </div>
+
+      <label for="img">
+        <p>Carregar fotos: </p>
+        <input type="file" id="img" name="img" accept="image/*" [(ngModel)]="image">
+      </label>
+    </div>
+
+    <ul>
+      <li>
+        <app-input type="text" placeholder="Nome do Pet" (modelChangeEmitter)="nomePet = $event"></app-input>
+      </li>
+      <li>
+        <app-input type="text" placeholder="Idade" (modelChangeEmitter)="idade = $event"></app-input>
+      </li>
+      <li>
+        <app-input type="text" placeholder="Raça" (modelChangeEmitter)="raca = $event"></app-input>
+      </li>
+      <li style="padding-bottom: 36px;">
+        <app-input type="text" placeholder="Porte" (modelChangeEmitter)="porte = $event"></app-input>
+
+        <div class=errors>
+          <ng-container *ngIf="hasErrors">
+            <ng-container *ngFor="let erro of _errors">
+              <small>
+                {{erro}}
+              </small>
+            </ng-container>
+          </ng-container>
+        </div>
+      </li>
+      <li>
+        <div>
+          <ng-container *ngIf="_confirming; else notConfirm">
+            <app-button label="Cadastrado com Sucesso" color="green"></app-button>
+          </ng-container>
+
+          <ng-template #notConfirm>
+            <app-button label="Cadastrar" (onClickChangeEmitter)="sendRegister()"></app-button>
+          </ng-template>
+        </div>
+      </li>
+    </ul>
+  </main>
+</section>

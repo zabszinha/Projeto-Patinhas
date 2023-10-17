@@ -15,7 +15,15 @@ export class RequestService {
     return this.http.post<string>('http://localhost:3000/AddUser', reg);
   }
 
-  login(log: Login): Observable<string> {
-    return this.http.post<string>('http://localhost:3000/LoginUser', log);
+  login(log: Login): Observable<any> {
+    return this.http.post<any>('http://localhost:3000/LoginUser', log);
+  }
+
+  listAllBixinhos(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:3000/ListAllBixinhos');
+  }
+
+  addBixinho(log: any): Observable<any> {
+    return this.http.post<any>('http://localhost:3000/AddBixinho', log);
   }
 }

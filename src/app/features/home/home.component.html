@@ -6,8 +6,9 @@
       Bem vindes ao Patinhas!
     </h1>
 
-    <p>Lorem ipsum dolor sit amet. Ea facilis pariatur non alias optio ab excepturi officia ut internos enim. Est magnam
-      tenetur non quia voluptatem est laboriosam voluptatum aut facere totam sit optio similique. </p>
+    <p>Nossa paixão por cães é o que nos impulsiona. Acreditamos que cada cão merece amor, carinho e um lugar para
+      chamar de lar. É por isso que trabalhamos incansavelmente para conectar cães adoráveis com pessoas incríveis como
+      você! </p>
   </label>
 
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -20,8 +21,9 @@
 <section id="sect2">
   <label>
     <h1>Nossos Serviços</h1>
-    <p>Lorem ipsum dolor sit amet. Ea facilis pariatur non alias optio ab excepturi officia ut internos enim. Est magnam
-      tenetur non quia voluptatem est laboriosam voluptatum aut facere totam sit optio similique. </p>
+    <p>Aqui encontrará uma ampla variedade de cães, tamanhos e idades, cada um com sua própria história especial. Você
+      pode explorar seus perfis, aprender sobre suas personalidades e ver fotos adoráveis. Temos certeza de que você
+      encontrará o companheiro perfeito que se encaixa no seu estilo de vida e no seu coração. </p>
   </label>
 
   <section class="cards-container">
@@ -30,7 +32,8 @@
       <hr>
       <label>
         <h2>Encontre seu Pet</h2>
-        <p>Lorem ipsum dolor sit amet. Ea facilis pariatur non alias optio ab excepturi officia ut internos enim.</p>
+        <p>Navegue por uma seleção diversificada de cães disponíveis para adoção. Cada perfil inclui informações
+          detalhadas sobre o cão, incluindo idade, raça, personalidade e histórico.</p>
       </label>
     </div>
     <div class="cards">
@@ -38,7 +41,9 @@
       <hr>
       <label>
         <h2>Cadastre um Pet</h2>
-        <p>Lorem ipsum dolor sit amet. Ea facilis pariatur non alias optio ab excepturi officia ut internos enim.</p>
+        <p>Cadastrar um pet para adoçã é uma maneira eficaz de ajudar a encontrar um lar amoroso para o animal.
+          Lembre-se de atualizar o anúncio à medida que o pet encontra um lar para evitar receber consultas
+          desnecessárias.</p>
       </label>
     </div>
     <div class="cards">
@@ -46,13 +51,15 @@
       <hr>
       <label>
         <h2>Saiba Como Ajudar</h2>
-        <p>Lorem ipsum dolor sit amet. Ea facilis pariatur non alias optio ab excepturi officia ut internos enim.</p>
+        <p>Ajudar uma ONG de animais é uma maneira de contribuir para o bem-estar dos animais e apoiar uma causa que
+          você se preocupa. Existem várias maneiras de oferecer ajuda as nossas ONG’s credenciadas. </p>
       </label>
     </div>
   </section>
 
   <div class="center action-button">
-    <app-button label="Quero AUdotar!" color="#24237B" width="100%"></app-button>
+    <app-button label="Quero AUdotar!" color="#24237B" width="100%"
+      (onClickChangeEmitter)="queroAUdotar()"></app-button>
   </div>
 
   <section class="help-container">
@@ -62,22 +69,25 @@
       <h2>Conheça maneiras de ajudar, além da adoção:</h2>
 
       <ul>
-        <li> Lorem ipsum dolor sit amet.  </li>
-        <li> Lorem ipsum dolor sit amet.  </li>
+        <li> Voluntariado </li>
+        <li>Apadrinhamento de animais</li>
+        <li>Fornecer suprimentos</li>
       </ul>
 
       <div class="center">
-        <app-button label="Quero ajudar!" color="#24237B" width="100%"></app-button>
+        <app-button label="Quero ajudar!" color="#24237B" width="100%"
+          (onClickChangeEmitter)="queroAUdotar()"></app-button>
       </div>
     </label>
   </section>
 
   <footer>
     <div class="card-foote">
-      <h2> Dúvidas sobre adoção? </h2>
-      <p>Lorem ipsum dolor sit amet. Ea facilis pariatur non alias optio ab excepturi officia ut internos enim. </p>
+      <h2> É uma ONG? </h2>
+      <p>Aqui no Patinhas também temos a possibilidade de ONG’s cadastrarem seus animais animais disponíveis para
+        adoção, fazendo com que os futuros tutores tenham maior possibilidade de encontrar seu AUmigo! </p>
       <div class="center">
-        <app-button label="Quero ajudar!" color="#24237B" width="80%"></app-button>
+        <app-button label="Cadastre um Animal!" color="#24237B" width="80%" (onClickChangeEmitter)="cadastrarAnimal()"></app-button>
       </div>
     </div>
   </footer>

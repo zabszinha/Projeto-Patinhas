@@ -1,0 +1,30 @@
+<div class="overflow">
+  <ng-container *ngFor="let animal of listaAnimais">
+    <main>
+      <img src="../../../assets/img/cachorro.jpg" width="500">
+
+      <section>
+        <label>
+          <h2> {{animal.nome}}, {{animal.raca}} </h2>
+
+          <div class="cards">
+            <strong>Idade</strong>
+            <p>{{animal.idade}}</p>
+          </div>
+          <div class="cards">
+            <strong>Porte</strong>
+            <p>{{animal.porte}}</p>
+          </div>
+        </label>
+
+        <div class="button">
+
+          <app-button label="Saiba mais" color="#24237B" width="100%"></app-button>
+
+          <app-button label="Audotar" color="#24237B" width="100%"></app-button>
+
+        </div>
+      </section>
+    </main>
+  </ng-container>
+</div>
