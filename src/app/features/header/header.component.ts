@@ -44,7 +44,7 @@ export class HeaderComponent implements  OnInit{
     } else {
       const token = JSON.parse(localStorage.getItem('FKToken') as string);
 
-      const typeUser = token.typeUser;
+      const typeUser = token.tp_usu;
       if (typeUser) {
         this.router.navigate(['auth/login']);
         return;
