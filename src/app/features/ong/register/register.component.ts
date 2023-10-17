@@ -59,7 +59,8 @@ export class RegisterONGComponent {
         porte: this.porte,
         foto: 'cachorro03',
         descricao: '',
-        id_usu: user.id
+        id_usu: user.id,
+        especie: ''
       }
 
       this.request.registerAnimal(obj)
