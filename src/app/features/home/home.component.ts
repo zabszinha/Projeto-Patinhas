@@ -12,13 +12,6 @@ export class HomeComponent implements OnInit {
   constructor(private validateService: ValidateService, private router: Router, private actvRout: ActivatedRoute) { }
 
   ngOnInit() {
-
-    const FKToken = {
-      id: 1,
-      typeUser: false
-    };
-
-    localStorage.setItem('FKToken', JSON.stringify(FKToken));
   }
 
   queroAUdotar() {

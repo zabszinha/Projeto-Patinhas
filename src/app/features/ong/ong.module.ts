@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthRoutingModule } from 'src/app/auth/auth-routing.module';
 import { InputModule } from 'src/app/shared/components/input/input.module';
 import { ButtonModule } from 'src/app/shared/components/button/button.module';
-import { ToolTipDirective } from 'src/app/shared/directives/tooltip.directive';
+
 import { HomeONGComponent } from './home/home.component';
 
 
@@ -17,7 +17,6 @@ import { HomeONGComponent } from './home/home.component';
 @NgModule({
   declarations: [
     RegisterONGComponent,
-    ToolTipDirective,
     HomeONGComponent
 
   ],

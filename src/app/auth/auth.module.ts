@@ -8,7 +8,7 @@ import { ButtonModule } from '../shared/components/button/button.module';
 import { RegisterComponent } from './register/register.component';
 import { RecoverAccessComponent } from './recover-access/recover-access.component';
 import { FormsModule } from '@angular/forms';
-import { ToolTipDirective } from '../shared/directives/tooltip.directive';
+
 
 
 
@@ -17,7 +17,6 @@ import { ToolTipDirective } from '../shared/directives/tooltip.directive';
     LoginComponent,
     RegisterComponent,
     RecoverAccessComponent,
-    ToolTipDirective
   ],
   imports: [
     CommonModule,
