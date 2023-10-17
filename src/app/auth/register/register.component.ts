@@ -10,13 +10,12 @@ import { RequestService } from 'src/app/shared/services/request.service';
 })
 export class RegisterComponent {
 
-  public typeUser: boolean = true;
 
   public name: string = '';
   public email: string = '';
   public senha: string = '';
   public rSenha: string = '';
-  public tp_usu!: boolean;
+  public typeUser: boolean = true;
 
   public _errors: string[] = [];
   public _confirming: boolean = false;
@@ -47,7 +46,7 @@ export class RegisterComponent {
       nome: this.name,
       email: this.email,
       senha: this.senha,
-      tp_usu: this.tp_usu,
+      tp_usu: this.typeUser,
     }
 
     if (!this.hasErrors) {
