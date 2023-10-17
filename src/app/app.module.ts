@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './features/home/home.component';
 import { ButtonModule } from './shared/components/button/button.module';
 import { DefaultComponent } from './features/default/default.component';
-import { ToolTipDirective } from './shared/directives/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,6 @@ import { ToolTipDirective } from './shared/directives/tooltip.directive';
     HeaderComponent,
     HomeComponent,
     DefaultComponent,
-    ToolTipDirective
   ],
   imports: [
     BrowserModule,
