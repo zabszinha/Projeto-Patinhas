@@ -9,10 +9,11 @@ import { RequestService } from 'src/app/shared/services/request.service';
 export class DefaultComponent implements OnInit {
   public favoriteAnimal: boolean = false;
   public showForm: boolean = false;
+  public id: number | null = null;
 
   public listaAnimais: any[] = [
     {
-      "id_animal": 1,
+      "id_animal": 0,
       "nome": "Cimba",
       "idade": 9,
       "especie": "Cachorro",
@@ -24,7 +25,7 @@ export class DefaultComponent implements OnInit {
       "selected": false
     },
     {
-      "id_animal": 2,
+      "id_animal": 1,
       "nome": "Zaira",
       "idade": 6,
       "especie": "Cachorro",
@@ -46,8 +47,9 @@ export class DefaultComponent implements OnInit {
     // })
   }
 
-  goToAdoptionForm(id?: string) {
+  goToAdoptionForm(id: number) {
     this.showForm = true;
+    this.id = id as number;
   }
 
   showFormUpdate(value: boolean) {
@@ -56,6 +58,6 @@ export class DefaultComponent implements OnInit {
 
   update() {
     this.showForm = false
-    this.listaAnimais[1].selected = true
+    this.listaAnimais[this.id as number].selected = true
   }
 }

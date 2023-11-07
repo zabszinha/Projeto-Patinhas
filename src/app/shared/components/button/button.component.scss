@@ -26,7 +26,6 @@ section {
     }
 
     &:disabled {
-      background-color: rgb(170, 170, 170) !important;
       pointer-events: none;
     }
   }

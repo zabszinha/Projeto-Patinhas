@@ -25,7 +25,7 @@
 
             <app-button label="Saiba mais" color="#24237B" width="100%"></app-button>
 
-            <app-button label="AUdotar" color="#24237B" width="100%" (onClickChangeEmitter)="goToAdoptionForm()" [disabled]="animal.selected"></app-button>
+            <app-button [label]="animal.selected ? 'Em Análise' : 'AUdotar'" [color]="animal.selected ? 'green' : '#24237B'" width="100%" (onClickChangeEmitter)="goToAdoptionForm(animal.id_animal)" [disabled]="animal.selected"></app-button>
 
             <ng-container *ngIf="!animal.selected; else favorited">
               <i class="pi pi-heart" (click)="favoriteAnimal = true"></i>
