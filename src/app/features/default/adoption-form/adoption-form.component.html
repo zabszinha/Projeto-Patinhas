@@ -1,0 +1,131 @@
+<section class="form-container">
+  <strong> Questionário de Adoção </strong>
+
+  <ul>
+    <h2> Onde você mora? </h2>
+    <li>
+      <input
+      placeholder="Apê"
+      (click)="ondeMora.selected1 = true; ondeMora.selected3 = false; ondeMora.selected2 = false"
+      [ngClass]="{'active': ondeMora.selected1}"
+    >
+    </li>
+    <li>
+      <input
+      placeholder="Casa"
+      (click)="ondeMora.selected2 = true; ondeMora.selected1 = false; ondeMora.selected3 = false"
+      [ngClass]="{'active': ondeMora.selected2}"
+    >
+    </li>
+    <li>
+      <input
+      placeholder="Sítio"
+      (click)="ondeMora.selected3 = true; ondeMora.selected1 = false; ondeMora.selected2 = false"
+      [ngClass]="{'active': ondeMora.selected3}"
+    >
+    </li>
+  </ul>
+
+  <ul>
+    <h2> Possui outros animais? </h2>
+    <li>
+      <input
+      placeholder="Sim"
+      (click)="possuiAnimais.selected1 = true; possuiAnimais.selected2 = false"
+      [ngClass]="{'active': possuiAnimais.selected1}"
+    >
+    </li>
+    <li>
+      <input
+      placeholder="Não"
+      (click)="possuiAnimais.selected2 = true; possuiAnimais.selected1 = false"
+      [ngClass]="{'active': possuiAnimais.selected2}"
+    >
+    </li>
+  </ul>
+
+  <ul>
+    <h2> Como é a rotina onde você mora? </h2>
+    <li>
+      <input
+      placeholder="Trabalho fora"
+      (click)="rotina.selected1 = true; rotina.selected2 = false; rotina.selected3 = false"
+      [ngClass]="{'active': rotina.selected1}"
+    >
+    </li>
+    <li>
+      <input
+      placeholder="Home Office"
+      (click)="rotina.selected2 = true; rotina.selected1 = false; rotina.selected3 = false"
+      [ngClass]="{'active': rotina.selected2}"
+    >
+    </li>
+    <li>
+      <input
+      placeholder="Flexível"
+      (click)="rotina.selected3 = true; rotina.selected1 = false; rotina.selected2 = false"
+      [ngClass]="{'active': rotina.selected3}"
+    >
+    </li>
+  </ul>
+
+  <ul>
+    <h2> Você se considera uma pessoa paciente?</h2>
+    <li>
+      <input
+      placeholder="Muito paciente"
+      (click)="pessoaPaciente.selected1 = true; pessoaPaciente.selected2 = false; pessoaPaciente.selected3 = false"
+      [ngClass]="{'active': pessoaPaciente.selected1}"
+    >
+
+    </li>
+    <li>
+      <input
+      placeholder="Depende do dia"
+      (click)="pessoaPaciente.selected2 = true; pessoaPaciente.selected1 = false; pessoaPaciente.selected3 = false"
+      [ngClass]="{'active': pessoaPaciente.selected2}"
+    >
+    </li>
+    <li>
+      <input
+      placeholder="Não"
+      (click)="pessoaPaciente.selected3 = true; pessoaPaciente.selected1 = false; pessoaPaciente.selected2 = false"
+      [ngClass]="{'active': pessoaPaciente.selected3}"
+    >
+    </li>
+  </ul>
+
+  <ul>
+    <h2> Qual seria o motivo da adoção?</h2>
+    <li>
+      <input
+      placeholder="Gostaria de uma companhia"
+      (click)="motivoAdocao.selected1 = true; motivoAdocao.selected2 = false; motivoAdocao.selected3 = false"
+      [ngClass]="{'active': motivoAdocao.selected1}"
+    >
+    </li>
+    <li>
+      <input
+      placeholder="Quero que o pet cresça com meu filho(a)"
+      (click)="motivoAdocao.selected2 = true; motivoAdocao.selected1 = false; motivoAdocao.selected3 = false"
+      [ngClass]="{'active': motivoAdocao.selected2}"
+    >
+    </li>
+    <li>
+      <input
+      placeholder="Quero ter mais pets"
+      (click)="motivoAdocao.selected3 = true; motivoAdocao.selected1 = false; motivoAdocao.selected2 = false"
+      [ngClass]="{'active': motivoAdocao.selected3}"
+    >
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <app-button label="Voltar" (onClickChangeEmitter)="back()"></app-button>
+    </li>
+    <li [ngClass]="{'disabled': !validateSend}">
+      <app-button label="Enviar" (onClickChangeEmitter)="send()"></app-button>
+    </li>
+  </ul>
+</section>

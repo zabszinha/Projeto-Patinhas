@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './features/home/home.component';
 import { ButtonModule } from './shared/components/button/button.module';
 import { DefaultComponent } from './features/default/default.component';
+import { AdoptionFormComponent } from './features/default/adoption-form/adoption-form.component';
+import { InputModule } from './shared/components/input/input.module';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { DefaultComponent } from './features/default/default.component';
     HeaderComponent,
     HomeComponent,
     DefaultComponent,
+    AdoptionFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ButtonModule
+    ButtonModule,
+    InputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

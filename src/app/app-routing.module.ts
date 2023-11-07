@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
 import { DefaultComponent } from './features/default/default.component';
+import { AdoptionFormComponent } from './features/default/adoption-form/adoption-form.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: "user",
-    component: DefaultComponent
+    component: DefaultComponent,
   },
   {
     path: "auth",

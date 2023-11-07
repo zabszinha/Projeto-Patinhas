@@ -1,0 +1,58 @@
+section.form-container {
+  height: auto !important;
+  padding: 100px 0;
+  ul {
+    li {
+      &:last-child {
+        display: initial !important;
+      }
+
+      &.disabled {
+        ::ng-deep app-button {
+          section {
+            button {
+              background-color: rgb(170, 170, 170) !important;
+              pointer-events: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+input {
+  border-radius: 29px;
+  background: #fff;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 58px;
+  font-size: 20px;
+  font-family: Chicle;
+  outline: none;
+  transition: ease-out 0.3s;
+  border: 2px solid #fff;
+  box-shadow: -1px 4px 29px 0px rgb(0 0 0 / 41%);
+  cursor: pointer;
+
+  caret-color: transparent;
+
+  &::placeholder {
+    transition: ease-out 0.3s;
+    color: black;
+  }
+
+  &.active {
+
+    &::placeholder {
+      transition: ease 0.3s;
+      color: #f55c5d;
+    }
+
+    transition: ease 0.3s;
+    border: 2px solid #f55c5d;
+    box-shadow: -1px 4px 29px 0px #f55c5d;
+  }
+}

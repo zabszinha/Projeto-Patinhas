@@ -24,5 +24,10 @@ section {
       opacity: 0.8;
       cursor: pointer;
     }
+
+    &:disabled {
+      background-color: rgb(170, 170, 170) !important;
+      pointer-events: none;
+    }
   }
 }

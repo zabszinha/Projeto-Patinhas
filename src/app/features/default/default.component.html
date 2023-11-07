@@ -1,39 +1,45 @@
 <div class="overflow">
-  <ng-container *ngFor="let animal of listaAnimais">
-    <main>
-      <img src="../../../assets/img/{{animal.foto}}.png" width="600" height="300">
+  <ng-container *ngIf="!showForm; else form">
+    <ng-container *ngFor="let animal of listaAnimais">
+      <main>
+        <img src="../../../assets/img/{{animal.foto}}.png" width="600" height="300">
 
-      <section>
-        <label>
-          <h2>
-            {{animal.nome}}, {{animal.raca}}
-            <small> Guarulhos, SP</small>
-          </h2>
+        <section>
+          <label>
+            <h2>
+              {{animal.nome}}, {{animal.raca}}
+              <small> Guarulhos, SP</small>
+            </h2>
 
-          <div class="cards">
-            <strong>Idade</strong>
-            <p>{{animal.idade}}</p>
+            <div class="cards">
+              <strong>Idade</strong>
+              <p>{{animal.idade}}</p>
+            </div>
+            <div class="cards">
+              <strong>Porte</strong>
+              <p>{{animal.porte}}</p>
+            </div>
+          </label>
+
+          <div class="button">
+
+            <app-button label="Saiba mais" color="#24237B" width="100%"></app-button>
+
+            <app-button label="AUdotar" color="#24237B" width="100%" (onClickChangeEmitter)="goToAdoptionForm()" [disabled]="animal.selected"></app-button>
+
+            <ng-container *ngIf="!animal.selected; else favorited">
+              <i class="pi pi-heart" (click)="favoriteAnimal = true"></i>
+            </ng-container>
+            <ng-template #favorited>
+              <i class="pi pi-heart-fill" style="color: #f55c5d;" (click)="favoriteAnimal = false"></i>
+            </ng-template>
           </div>
-          <div class="cards">
-            <strong>Porte</strong>
-            <p>{{animal.porte}}</p>
-          </div>
-        </label>
-
-        <div class="button">
-
-          <app-button label="Saiba mais" color="#24237B" width="100%"></app-button>
-
-          <app-button label="AUdotar" color="#24237B" width="100%"></app-button>
-
-          <ng-container *ngIf="!favoriteAnimal; else favorited">
-            <i class="pi pi-heart" (click)="favoriteAnimal = true"></i>
-          </ng-container>
-          <ng-template #favorited>
-            <i class="pi pi-heart-fill" style="color: #f55c5d;" (click)="favoriteAnimal = false"></i>
-          </ng-template>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </ng-container>
   </ng-container>
+
+  <ng-template #form>
+    <app-adoption-form (backChangeEmitter)="showFormUpdate($event)" (sendChangeEmitter)="update()"></app-adoption-form>
+  </ng-template>
 </div>

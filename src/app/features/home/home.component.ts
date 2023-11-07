@@ -13,12 +13,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    // const FKToken = {
-    //   id: 1,
-    //   tp_usu: true
-    // };
+    const FKToken = {
+      id: 1,
+      tp_usu: false
+    };
 
-    // localStorage.setItem('FKToken', JSON.stringify(FKToken));
+    localStorage.setItem('FKToken', JSON.stringify(FKToken));
   }
 
   queroAUdotar() {
